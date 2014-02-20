@@ -1,0 +1,17 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.4.8",
+    "ejs": "*",
+    "feedparser":"0.16.6",
+    "request":"2.33.0",
+    "iconv":"2.0.7",
+    "mongoose":"3.8.7",
+    "mongodb":"*"
+  }
+}

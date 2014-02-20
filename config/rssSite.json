@@ -1,0 +1,32 @@
+{
+
+    "channel":[
+        {
+            "from":"baidu",
+            "name":"civilnews",
+            "work":false,
+            "title":"百度国内最新新闻",
+            "link":"http://news.baidu.com/n?cmd=4&class=civilnews&tn=rss",
+            "typeId":1
+        },{
+            "from":"baidu",
+            "name":"internews",
+            "work":false,
+            "title":"百度国际最新新闻",
+            "link":"http://news.baidu.com/n?cmd=4&class=internews&tn=rss",
+            "typeId":2
+        },{
+            "from":"netEase",
+            "name":"rss_newstop",
+            "title":"网易头条",
+            "link":"http://news.163.com/special/00011K6L/rss_newstop.xml",
+            "typeId":3
+        },{
+            "from":"netEase",
+            "name":"rss_gn",
+            "title":"网易最新新闻",
+            "link":"http://news.163.com/special/00011K6L/rss_gn.xml",
+            "typeId":4
+        }
+    ]
+}
