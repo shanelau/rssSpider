@@ -8,11 +8,15 @@ var routes = require('./routes');
 var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
+var DB = require('./DB');
+var spider = require('./service/spiderFromSource');
+
+
 
 var app = express();
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 8001);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.favicon());
@@ -31,6 +35,8 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
+app.get('/getNews', routes.news);
+app.get('/newsRecord', routes.newsRecord);
 app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){

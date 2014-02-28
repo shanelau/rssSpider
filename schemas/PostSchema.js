@@ -3,12 +3,16 @@
  */
 var mongoose = require('mongoose');
 var PostSchema = new mongoose.Schema({
-    title:String,
+    title:{type:String,unique:true},
     link :String,
     description :String,
-    pubDate :String,
+    descImg:String,
+    pubDate :{
+        type:Date,
+        'default':Date.now
+    },
     source :String,
-    author :String,
-    typeId : Number
+    typeId : Number,
+    records:[]
 });
 module.exports = PostSchema;

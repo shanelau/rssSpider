@@ -1,0 +1,33 @@
+{
+    "ttl":10,
+    "channel":[
+        {
+            "name":"头条",
+            "typeId":1,
+            "url":"http://m.baidu.com/ssid=0/from=0/bd_page_type=1/uid=0/pu=sz%40224_220%2Cta%40middle___3_537/news?tn=bdwcnc&word=topnews&datano=10086&pfr=3-11-bdindex-top-7-top-"
+        },
+        {
+            "name":"国内焦点",
+            "typeId":2,
+            "url":"http://m.baidu.com/ssid=0/from=0/bd_page_type=1/uid=0/pu=ta%40big____%2Csz%401330_240/news?tn=bdwcnc&word=civilnews&cf=c1&datano=21&pfr=3-11-bdwcna-civilnews-7-topnews--"
+        },
+        {
+            "name":"娱乐新闻",
+            "typeId":3,
+            "url":"http://m.baidu.com/ssid=0/from=0/bd_page_type=1/uid=0/pu=ta%40big____%2Csz%401330_240/news?tn=bdwcnc&word=enternews&cf=c1&datano=21&pfr=3-11-bdwcna-enternews-7-topnews--"
+        }
+        ,
+        {
+            "name":"社会新闻",
+            "typeId":4,
+            "url":"http://m.baidu.com/ssid=0/from=0/bd_page_type=1/uid=0/pu=ta%40big____%2Csz%401330_240/news?tn=bdwcnc&word=socianews&cf=c1&datano=21&pfr=3-11-bdwcna-socianews-7-topnews--"
+        }
+        ,
+        {
+            "name":"体育",
+            "typeId":5,
+            "url":"http://m.baidu.com/ssid=0/from=0/bd_page_type=1/uid=0/pu=ta%40big____%2Csz%401330_240/news?tn=bdwcnc&word=sportnews&cf=c1&datano=21&pfr=3-11-bdwcna-sportnews-7-topnews--"
+        }
+
+    ]
+}

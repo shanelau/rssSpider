@@ -2,7 +2,7 @@
  * Created by liu.xing on 14-2-20.
  */
 var mongoose = require('mongoose');
-var dbConfig = require('./config/dbConfig.json');
+var dbConfig = require('./config/config.json');
 mongoose.connect(dbConfig.url);
 var db = mongoose.connection;
 

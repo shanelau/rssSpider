@@ -1,5 +1,6 @@
 {
     "url":"mongodb://127.0.0.1:27017/newsServer",
     "name":"liux",
-    "password":"liux"
+    "password":"liux",
+    "serverSite":"http://127.0.0.1:8001/"
 }

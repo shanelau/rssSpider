@@ -2,9 +2,9 @@
 var request = require('request')
     , FeedParser = require('feedparser')
     , rssSite = require('../config/rssSite.json')
+    , config = require('../config/config.json')
     , Iconv = require('iconv').Iconv;
 var Post = require('../model/Post');
-var DB = require('../DB');
 var postService = require('../service/postService');
 
 
@@ -43,6 +43,7 @@ function fetch(feed,typeId) {
     feedparser.on('error', done);
     feedparser.on('end', function(err){
         postService.savePost(posts);
+        console.log(posts[0])
     });
     feedparser.on('readable', function() {
         var post;
@@ -53,7 +54,7 @@ function fetch(feed,typeId) {
     function transToPost(post){
         var mPost = new Post({
             title : post.title,
-            link : post.link,
+            link :  post.link,
             description : post.description,
             pubDate : post.pubDate,
             source : post.source,
@@ -82,12 +83,14 @@ function done(err) {
     }
     //process.exit();
 }
-
-var channels = rssSite.channel;
-channels.forEach(function(e,i){
-    if(e.work != false){
-        console.log("begin:"+ e.title);
-        fetch(e.link, e.typeId);
-    }
-});
-
+function spiderBegin(){
+    console.log("spider begin...")
+    var channels = rssSite.channel;
+    channels.forEach(function(e,i){
+        if(e.work != false){
+            console.log("begin:"+ e.title);
+            fetch(e.link, e.typeId);
+        }
+    });
+}
+setInterval(spiderBegin,rssSite.ttl*60*1000,0);
