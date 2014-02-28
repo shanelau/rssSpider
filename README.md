@@ -12,7 +12,7 @@ rssSpider
 项目的详细介绍地址：http://blog.csdn.net/kissliux/article/details/19560603
 
 #新增功能
-1、使用express 提供新闻服务，
+1、使用express 提供新闻服务，为android客户端和其他客户端提供服务
 
 2、加入分页支持
 
