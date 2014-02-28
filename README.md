@@ -9,6 +9,14 @@ rssSpider
 
 运行方式  node service/spider.js
 
-
-
 项目的详细介绍地址：http://blog.csdn.net/kissliux/article/details/19560603
+
+#新增功能
+1、使用express 提供新闻服务，
+
+2、加入分页支持
+
+3、使用chreeio 插件，新闻变量web网页全文，抓取新闻标题和url地址。(针对m.baidu.com测试)实验。
+
+
+
