@@ -24,33 +24,7 @@ news spider,rss server
 2.  RSS抓取到新闻链接后，继续抓取新闻正文，提取出新闻正文中的有用图片、和正文。 新闻进行列表显示的时候，如果有图片，更能吸引眼球，本项目抓取网易的新闻正和图片，正确率在90%以上
 3.  为其他客户端提供新闻查询的http服务，查询新闻列表(标题、图片、描述)，获取新闻正文
 
-*客户端请求新闻列表协议*
-Demo：
-http://58.60.184.212:8001/getNewsPage?page=0&maxNums=5&typeId=3&pic=true
-
-参数名	值类型	是否必须	默认值	描述
-page	Int 	 否 	0	请求新闻的页数，
-
-maxNums	Int 	是		每页显示的新闻数量
-typeId	Int	是	1	新闻类别,比如新闻头条 typId值为1，社会新闻值为2
-pic	Boolean  	否	false	Pic ==true 会返回图片的地址，其他情况不会返回图片
-
-*响应格式*
-参数名	值类型	描述
-title   String	 新闻标题
-pubDate 	String	新闻发布日期
-typeId 	Number	类型编号
-_id	String	新闻编号
-Page	Number	当前页数
-descImg	String 	新闻图片的url地址
-
-*查询一条新闻正文协议*
-Demo：http://localhost:8001/newsRecord?userId=liux&id=530c444a7c65d70000f9d1b8
-
-参数名	值类型	是否必须	默认值	描述
-userId	String 	否	无	用户的标志
-Id	String	是	无	新闻编号 _id
-
+*客户端请求新闻列表协议* 见源码中的文档
 
 
 #2014.2.27 更新日志
