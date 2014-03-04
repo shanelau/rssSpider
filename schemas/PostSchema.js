@@ -7,6 +7,7 @@ var PostSchema = new mongoose.Schema({
     link :String,
     description :String,
     descImg:String,
+    context:String,
     pubDate :{
         type:Date,
         'default':Date.now

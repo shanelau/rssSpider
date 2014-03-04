@@ -1,96 +1,46 @@
-
-var request = require('request')
-    , FeedParser = require('feedparser')
-    , rssSite = require('../config/rssSite.json')
-    , config = require('../config/config.json')
-    , Iconv = require('iconv').Iconv;
-var Post = require('../model/Post');
+/**
+ * Created by liu.xing on 14-2-24.
+ *
+ * 爬取RSS地址，装配成POST对象，并且存入mongodb
+ * 1.  批量抓取到新闻的列表和链接
+ * 2.  遍历链接获取到新闻正文，和新闻正文中的图片
+ * 3.  存入mongodb数据库
+ */
+var spiderUtil = require('../service/spiderUtil');
+var rssSite = require('../config/rssSite.json'); //rss website config file
 var postService = require('../service/postService');
+var cheerio = require('cheerio');
 
-
-function fetch(feed,typeId) {
-    var posts;
-    // Define our streams
-    var req = request(feed, {timeout: 10000, pool: false});
-    req.setMaxListeners(50);
-    // Some feeds do not response without user-agent and accept headers.
-    req.setHeader('user-agent', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36')
-        .setHeader('accept', 'text/html,application/xhtml+xml');
-
-    var feedparser = new FeedParser();
-
-    // Define our handlers
-    req.on('error', done);
-    req.on('response', function(res) {
-        var stream = this
-            , iconv
-            , charset;
-        posts = new Array();
-        if (res.statusCode != 200) return this.emit('error', new Error('Bad status code'));
-        charset = getParams(res.headers['content-type'] || '').charset;
-        if (!iconv && charset && !/utf-*8/i.test(charset)) {
-            try {
-                iconv = new Iconv(charset, 'utf-8');
-                iconv.on('error', done);
-                stream = this.pipe(iconv);
-            } catch(err) {
-                this.emit('error', err);
-            }
-        }
-        stream.pipe(feedparser);
-    });
-
-    feedparser.on('error', done);
-    feedparser.on('end', function(err){
-        postService.savePost(posts);
-        console.log(posts[0])
-    });
-    feedparser.on('readable', function() {
-        var post;
-        while (post = this.read()) {
-            posts.push(transToPost(post));//保存到数据库
-        }
-    });
-    function transToPost(post){
-        var mPost = new Post({
-            title : post.title,
-            link :  post.link,
-            description : post.description,
-            pubDate : post.pubDate,
-            source : post.source,
-            author : post.author,
-            typeId : typeId
+/**
+ * 任务调度函数
+ */
+function rssSpider(callback){
+        console.log("spider begin...")
+        var sites = rssSite.sites;
+        sites.forEach(function(site){
+            site.channel.forEach(function(e){  //配置文件中的新闻rss url地址
+                if(e.work !== "false"){
+                    console.log("begin:"+ e.title);
+                    spiderUtil.fetchRSS(e.link, e.typeId,function(posts){  //获取rss中所有的新闻
+                        posts.forEach(function(post){
+                            spiderUtil.getNewsContent(post.link, site.contentTag,function(context,descImg){
+                                if(descImg != null && descImg.indexOf(site.newsPic) === -1){ //网易新闻自带的图标，不应该作为新闻图片
+                                    post.descImg = descImg;
+                                }
+                                if(context != null && context !== ""){
+                                    var $ = cheerio.load(context);
+                                    $("iframe").remove();
+                                    $("img[src='"+site.removeElement+"']").remove(); //需要删除的元素，根据项目需求来
+                                    post.context = $.html();
+                                    postService.addPost(post);  //保存到数据库
+                                }
+                            });
+                        });
+                        callback();
+                    });
+                }
+            });
         });
-        return mPost;
-    }
 }
+exports.rssSpider =rssSpider;
 
-function getParams(str) {
-    var params = str.split(';').reduce(function (params, param) {
-        var parts = param.split('=').map(function (part) { return part.trim(); });
-        if (parts.length === 2) {
-            params[parts[0]] = parts[1];
-        }
-        return params;
-    }, {});
-    return params;
-}
-
-function done(err) {
-    if (err) {
-        console.error(err.stack);
-       // return process.exit(1);
-    }
-    //process.exit();
-}
-function spiderBegin(){
-    console.log("spider begin...")
-    var channels = rssSite.channel;
-    channels.forEach(function(e,i){
-        if(e.work != false){
-            console.log("begin:"+ e.title);
-            fetch(e.link, e.typeId);
-        }
-    });
-}
-setInterval(spiderBegin,rssSite.ttl*60*1000,0);

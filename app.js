@@ -9,9 +9,10 @@ var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
 var DB = require('./DB');
-var spider = require('./service/spiderFromSource');
+var spider = require('./service/spiderFromRss');
+var rssSite = require('./config/rssSite.json'); //rss website config file
 
-
+var interval = rssSite.ttl*60*1000; //运行间隔时间
 
 var app = express();
 
@@ -30,15 +31,25 @@ app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
-if ('development' == app.get('env')) {
+if ('development' === app.get('env')) {
   app.use(express.errorHandler());
 }
 
 app.get('/', routes.index);
-app.get('/getNews', routes.news);
+app.get('/getNewsPage', routes.getNewsPage);
 app.get('/newsRecord', routes.newsRecord);
 app.get('/users', user.list);
 
+DB.init();
+//爬虫开始
+(function schedule(){
+    setTimeout(function(){
+        spider.rssSpider(function(){
+            schedule();
+        });
+    },interval);
+})();
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
+
 });

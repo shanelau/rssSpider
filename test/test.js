@@ -1,6 +1,5 @@
 /**
  * Created by liu.xing on 14-2-25.
  */
-var event = new (require('events').EventEmitter)();
-event.emit('event1');
-event.emit('error',new Error("something is error"));
+var img = "http://img1.cache.netease.com/cnews/css13/img/end_news.png";
+console.log(img.indexOf("end_news1"));

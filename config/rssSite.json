@@ -1,31 +1,36 @@
 {
     "ttl":10,
-    "channel":[
+    "sites":
+    [
         {
             "from":"netEase",
-            "name":"rss_newstop",
-            "title":"网易头条",
-            "link":"http://news.163.com/special/00011K6L/rss_newstop.xml",
-            "typeId":1
-        },{
-            "from":"netEase",
-            "name":"rss_gn",
-            "title":"网易最新新闻",
-            "link":"http://news.163.com/special/00011K6L/rss_gn.xml",
-            "typeId":2
-        },
-        {
-            "from":"netEase",
-            "name":"rss_gj",
-            "title":"网易国际新闻",
-            "link":"http://news.163.com/special/00011K6L/rss_gj.xml",
-            "typeId":3
-        },{
-            "from":"netEase",
-            "name":"rss_sh",
-            "title":"网易社会新闻",
-            "link":"http://news.163.com/special/00011K6L/rss_sh.xml",
-            "typeId":4
+            "contentTag":"#endText",
+            "newsPic":"end_news",
+            "removeElement":"http://img1.cache.netease.com/cnews/css13/img/end_news.png",
+            "channel":
+                [
+                    {
+                        "title":"网易头条",
+                        "link":"http://news.163.com/special/00011K6L/rss_newstop.xml",
+                        "typeId":1
+                    },
+                    {
+                        "title":"网易最新新闻",
+                        "link":"http://news.163.com/special/00011K6L/rss_gn.xml",
+                        "typeId":2
+                    },
+                    {
+                        "title":"网易国际新闻",
+                        "link":"http://news.163.com/special/00011K6L/rss_gj.xml",
+                        "typeId":3,
+                        "contentTag":"#endText"
+                    },
+                    {
+                        "title":"网易社会新闻",
+                        "link":"http://news.163.com/special/00011K6L/rss_sh.xml",
+                        "typeId":4
+                    }
+                ]
         }
     ]
 }

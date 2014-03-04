@@ -1,5 +1,6 @@
 /**
  * Created by liu.xing on 14-2-18.
+ * post 数据库操作，增删改查等等
  */
 var Post = require('../model/Post');
 function getPost(mTitle,mLink,mTypeId){
@@ -12,32 +13,43 @@ function getPost(mTitle,mLink,mTypeId){
 }
 function savePost(mTitle,mLink,mTypeId){
     var post = getPost(mTitle,mLink,mTypeId);
-    post.save(function(err,r){
+    post.save(function(err){
         if(err){
-            console.error(err.stack);
+            console.error(err.message);
             return;
-        };
+        }
         console.log(post.title);
     });
 
 }
-function savePosts(posts){
-    posts.forEach(function(e,i){
-        e.save(function(err,r){
-            if(err){
-                console.error(err.stack);
-                return;
-            };
-            console.log(e.title);
-            console.log(r);
-        });
+function addPost(post){
+    post.save(function(err){
+        if(err){
+            console.error(err.message);
+            return;
+        }
+        console.log(post.title);
     });
 }
-function getPage(page,maxPostPerPage,typeId,openDesc,callback){
-    var filter = openDesc=='true'?
-    {title:1,"pubDate":1,typeId:1,_id:1,description:1,records:0,descImg:1}
-        :{description:0,link:0,records:0,descImg:0};
-    Post.find({typeId:typeId},filter)
+function savePosts(posts){
+    posts.forEach(function(e){
+        addPost(e);
+    });
+}
+/**
+ * 获取新闻列表
+ * @param page
+ * @param maxPostPerPage
+ * @param typeId
+ * @param callback
+ */
+function getNewsPage(page,maxPostPerPage,typeId,needPic,callback){
+    var filed = {link:0,context:0,records:0,_v:0};
+    var filter = {
+        typeId:typeId,
+        "descImg":{"$exists":needPic}
+    };
+    Post.find(filter,filed)
         .sort({"_id":-1})
         .skip(page*maxPostPerPage)
         .limit(maxPostPerPage)
@@ -46,25 +58,42 @@ function getPage(page,maxPostPerPage,typeId,openDesc,callback){
             callback({"posts":posts,"page":page});
         });
 }
-function updatePost(postId,userId,callback){
+/**
+ * 记录用户访问新闻的习惯
+ * @param postId
+ * @param userId
+ */
+function updatePost(postId,userId){
     Post.update({"_id":postId},{"$addToSet":{"records":userId}},
-        function(err,r){
-            if(err){console.log(err); return;}
+        function(err){
+            if(err){
+                console.log(err);
+                throw err;
+            }
     });
-    findPost(postId,callback);
 }
-function findPost(postId,callback){
-    Post.find({"_id":postId},function(err,post){
-        if(err){console.log(err); return;}
-        console.log(post);
+/**
+ *  查找单条新闻。记录用户访问新闻的习惯
+ * @param postId 新闻编号、
+ * @param userId  用户编号
+ * @param callback
+ */
+function findPost(postId,userId,callback){
+    updatePost(postId,userId);
+    Post.find({"_id":postId},{context:1}).exec(function(err,post){
+        if(err){
+            console.log(err);
+            throw err;
+        }
         if(post[0] != null){
-            callback(post[0].link);
+            callback(post);
         }
     });
 }
 
 exports.savePost = savePost;
+exports.addPost = addPost;
 exports.savePosts = savePosts;
-exports.getPage = getPage;
+exports.getNewsPage = getNewsPage;
 exports.updatePost = updatePost;
 exports.findPost = findPost;
