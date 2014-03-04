@@ -15,10 +15,17 @@ news spider,rss server
 
 **运行方式  node app.js**
 
-
 **本项目以网易的rss进行测试 http://www.163.com/rss**
-
 **关键抓取代码，在service目录**
+
+##项目特色##
+1.  多站点同时抓取，需要抓取的站点可以在配置文件中配置
+2.  站点正文的准确率非常高，包括图片
+3.  nodejs实现，抓取效率非常高
+4.  可以配置抓取的时间，和新闻正文的开始标签，过滤掉广告无用的图片和广告（iframe广告）
+5.  已经提供了，新闻列表和新闻查询的http服务，为android或者其他客户端完美提供数据源支持
+
+
 
 项目的详细介绍地址：
 文章1：http://blog.csdn.net/kissliux/article/details/19560603
