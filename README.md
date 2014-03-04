@@ -10,14 +10,15 @@ news spider,rss server
 最新做一个新闻项目，项目流程很简单，使用nodejs去网络上面抓取新闻，存到mongodb数据库，然后对客户端提供http服务。客户端的实现网上有很多源码，上一篇文字介绍了，怎么从rss地址抓取新闻的url地址和链接等等，未抓取新闻正文和新闻的概要图片。对于一个新闻客户端来说，没有图片是致命的打击，图文并茂才能吸引用户 。
 
 
-**本项目以网易的rss进行测试 http://www.163.com/rss**
-
-**关键抓取代码，在service目录**
-
 项目开发环境：nodejs、mongodb
+
 
 **运行方式  node app.js**
 
+
+**本项目以网易的rss进行测试 http://www.163.com/rss**
+
+**关键抓取代码，在service目录**
 
 项目的详细介绍地址：
 文章1：http://blog.csdn.net/kissliux/article/details/19560603
