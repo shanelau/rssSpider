@@ -13,9 +13,13 @@ rssSpider
 项目开发环境：nodejs、mongodb
 
 **运行方式 **
-<code> node app.js
+
+<code> 
+  node app.js
 </code>
+
 **本项目以网易的rss进行测试 http://www.163.com/rss**
+
 **关键抓取代码，在service目录**
 
 
