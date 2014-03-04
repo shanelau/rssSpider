@@ -19,7 +19,9 @@ news spider,rss server
 **运行方式  node app.js**
 
 
-项目的详细介绍地址：文章1：http://blog.csdn.net/kissliux/article/details/19560603
+项目的详细介绍地址：
+文章1：http://blog.csdn.net/kissliux/article/details/19560603
+
 文章2：http://blog.csdn.net/kissliux/article/details/20466889
 
 #2014.3.4  更新日志
