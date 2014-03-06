@@ -2,3 +2,4 @@
 logs/*.log
 *.log
 !.gitignore
+!node_modules/*
