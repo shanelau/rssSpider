@@ -13,6 +13,8 @@ rssSpider
 项目开发环境：nodejs、mongodb
 
 **运行方式 **
+先加载依赖的库
+<code> npm install -d </code> 
 
 <code> 
   node app.js
