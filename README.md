@@ -55,5 +55,7 @@ rssSpider
 
 3、使用chreeio插件，遍历web网页全文，抓取新闻标题和url地址。(针对m.baidu.com测试)实验。
 
+>有任何问题，请联系作者：刘兴， kissliux@qq.com
+
 
 
