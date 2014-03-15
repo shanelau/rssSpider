@@ -147,8 +147,6 @@ function getNewsContent(url,tag,callback){
         if(img !== null){
             imgPath = $(img).attr("src");  //新闻的缩略图
         }
-        console.log(url);
-        console.log(imgPath);
         callback(context,imgPath);   //回调新闻正文和图片
     });
 }
@@ -156,7 +154,7 @@ exports.fetchRSS = fetchRSS;
 exports.fetchContent = fetchContent;
 exports.getNewsContent = getNewsContent;
 
-//测试代码
+
 /*getNewsContent("http://news.163.com/14/0303/02/9MCM2V4Q00014AED.html","#endText",function(context,imgPath){
     console.log(context);
 });*/

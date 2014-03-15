@@ -22,62 +22,7 @@
     <favorites_list name="newsSpider" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="postService.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/service/postService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="16" selection-start="1056" selection-end="1056" vertical-scroll-proportion="0.27161998" vertical-offset="1002" max-vertical-offset="2600">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="20" selection-start="352" selection-end="355" vertical-scroll-proportion="0.0" vertical-offset="129" max-vertical-offset="975">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/test.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="34" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="250">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="spiderFromRss.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/spiderFromRss.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="27" selection-start="1468" selection-end="1468" vertical-scroll-proportion="0.0" vertical-offset="542" max-vertical-offset="1300">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="spiderUtil.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/spiderUtil.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="150" column="27" selection-start="4369" selection-end="4369" vertical-scroll-proportion="0.0" vertical-offset="3348" max-vertical-offset="4200">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rssSite.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/rssSite.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="12" selection-start="14" selection-end="14" vertical-scroll-proportion="-0.7352941" vertical-offset="0" max-vertical-offset="1025">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -87,21 +32,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/dbTest.js" />
-        <option value="$PROJECT_DIR$/test/dbTest.js" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/service/spiderContent.js" />
         <option value="$PROJECT_DIR$/schemas/PostSchema.js" />
         <option value="$PROJECT_DIR$/service/spiderFromSource.js" />
         <option value="$PROJECT_DIR$/DB.js" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/config/newsSite.json" />
         <option value="$PROJECT_DIR$/test/chreeioTest.js" />
-        <option value="$PROJECT_DIR$/routes/index.js" />
-        <option value="$PROJECT_DIR$/service/postService.js" />
-        <option value="$PROJECT_DIR$/service/spiderUtil.js" />
         <option value="$PROJECT_DIR$/test/test.js" />
         <option value="$PROJECT_DIR$/service/spiderFromRss.js" />
+        <option value="$PROJECT_DIR$/service/spiderUtil.js" />
+        <option value="$PROJECT_DIR$/config/newsSite.json" />
+        <option value="$PROJECT_DIR$/service/postService.js" />
+        <option value="$PROJECT_DIR$/views/news.html" />
+        <option value="$PROJECT_DIR$/views/news.ejs" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/routes/index.js" />
+        <option value="$PROJECT_DIR$/views/index.ejs" />
         <option value="$PROJECT_DIR$/config/rssSite.json" />
       </list>
     </option>
@@ -196,20 +141,26 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="options.splitter.main.proportions" value="0.30333334" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="preferences.sourceCode" />
+    <property name="recentsLimit" value="5" />
     <property name="JavaScriptLanguageLevel" value="ES5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/test/chreeioTest.js" />
     <property name="FullScreen" value="false" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="JavaScriptPreferStrict" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\node_project\newsSpider\public\images" />
+      <recent name="D:\node_project\newsSpider\public\stylesheets" />
+      <recent name="D:\node_project\newsSpider\public" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\node_project\newsSpider\test" />
       <recent name="D:\node_project\newsSpider\config" />
@@ -217,14 +168,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Node.js.app">
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -235,8 +178,23 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
     <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
+      <setting name="configLocationType" value="CONFIG_FILE" />
+      <setting name="settingsFile" value="" />
+      <setting name="serverType" value="INTERNAL" />
+      <setting name="preferredDebugBrowser" value="CHROME" />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -319,11 +277,11 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286219" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32979977" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2496" sideWeight="0.64481527" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17515923" sideWeight="0.5041225" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23407644" sideWeight="0.7773852" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.56853396" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17515923" sideWeight="0.28857478" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26030624" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4958775" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23792697" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22261484" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -348,9 +306,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2496" sideWeight="0.64481527" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21735668" sideWeight="0.54299176" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.45700824" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -370,116 +328,112 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/routes/user.js">
+    <entry file="file://$PROJECT_DIR$/schemas/PostSchema.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="821" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/service/spiderFromSource.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="24" selection-start="1115" selection-end="1115" vertical-scroll-proportion="0.0" vertical-offset="695" max-vertical-offset="1375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DB.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="1" selection-start="370" selection-end="370" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="500">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="286" column="12" selection-start="6309" selection-end="6309" vertical-scroll-proportion="3.442623" vertical-offset="5680" max-vertical-offset="8175">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/express/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2325">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/express/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="40" selection-start="30" selection-end="41" vertical-scroll-proportion="0.05854801" vertical-offset="0" max-vertical-offset="427">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1375">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/newsSite.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="12" selection-start="14" selection-end="14" vertical-scroll-proportion="0.045207955" vertical-offset="0" max-vertical-offset="950">
+        <state line="1" column="11" selection-start="13" selection-end="13" vertical-scroll-proportion="0.046904314" vertical-offset="0" max-vertical-offset="950">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/base.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="19" selection-start="364" selection-end="364" vertical-scroll-proportion="0.21315469" vertical-offset="175" max-vertical-offset="1525">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-3.4946237" vertical-offset="1950" max-vertical-offset="6875">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/chreeioTest.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/view.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="72" selection-start="148" selection-end="148" vertical-scroll-proportion="0.09689923" vertical-offset="0" max-vertical-offset="516">
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schemas/PostSchema.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="19" selection-start="339" selection-end="345" vertical-scroll-proportion="0.57224333" vertical-offset="74" max-vertical-offset="600">
+        <state line="42" column="2" selection-start="1055" selection-end="1055" vertical-scroll-proportion="0.0" vertical-offset="1495" max-vertical-offset="2075">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
+    <entry file="file://$PROJECT_DIR$/config/config.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="20" selection-start="352" selection-end="355" vertical-scroll-proportion="0.0" vertical-offset="129" max-vertical-offset="975">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="418">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/test.js">
+    <entry file="file://$PROJECT_DIR$/DB.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="34" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="250">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/rssSite.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="12" selection-start="14" selection-end="14" vertical-scroll-proportion="-0.7352941" vertical-offset="0" max-vertical-offset="1025">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/spiderUtil.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="150" column="27" selection-start="4369" selection-end="4369" vertical-scroll-proportion="0.0" vertical-offset="3348" max-vertical-offset="4200">
+        <state line="9" column="42" selection-start="318" selection-end="318" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="500">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/service/spiderFromRss.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="27" selection-start="1468" selection-end="1468" vertical-scroll-proportion="0.0" vertical-offset="542" max-vertical-offset="1300">
+        <state line="19" column="7" selection-start="492" selection-end="1774" vertical-scroll-proportion="0.19680852" vertical-offset="364" max-vertical-offset="1300">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/spiderUtil.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="146" column="25" selection-start="4253" selection-end="4253" vertical-scroll-proportion="6.471631" vertical-offset="0" max-vertical-offset="4150">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/news.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="6" selection-start="29" selection-end="29" vertical-scroll-proportion="0.088339224" vertical-offset="0" max-vertical-offset="750">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="19" selection-start="1196" selection-end="1196" vertical-scroll-proportion="1.1583333" vertical-offset="455" max-vertical-offset="1525">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/service/postService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="16" selection-start="1056" selection-end="1056" vertical-scroll-proportion="0.27161998" vertical-offset="1002" max-vertical-offset="2600">
+        <state line="45" column="20" selection-start="889" selection-end="900" vertical-scroll-proportion="0.12658228" vertical-offset="1045" max-vertical-offset="2600">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="19" selection-start="343" selection-end="343" vertical-scroll-proportion="-11.764706" vertical-offset="0" max-vertical-offset="600">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="32" selection-start="824" selection-end="824" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="1800">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="24" selection-start="1312" selection-end="1312" vertical-scroll-proportion="0.86153847" vertical-offset="646" max-vertical-offset="2200">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/rssSite.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="44" selection-start="1017" selection-end="1017" vertical-scroll-proportion="0.7943144" vertical-offset="225" max-vertical-offset="1025">
           <folding />
         </state>
       </provider>

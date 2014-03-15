@@ -80,7 +80,7 @@ function updatePost(postId,userId){
  */
 function findPost(postId,userId,callback){
     updatePost(postId,userId);
-    Post.find({"_id":postId},{context:1}).exec(function(err,post){
+    Post.find({"_id":postId},{context:1,title:1}).exec(function(err,post){
         if(err){
             console.log(err);
             throw err;
