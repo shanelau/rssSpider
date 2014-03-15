@@ -20,6 +20,13 @@ rssSpider
 <code> 
   node app.js
 </code>
+访问网页新闻列表，和内容
+<code> 
+  直接访问http://localhost:8001
+</code>
+
+
+
 
 **本项目以网易的rss进行测试 http://www.163.com/rss**
 
@@ -32,6 +39,7 @@ rssSpider
 3.  nodejs实现，抓取效率非常高
 4.  可以配置抓取的时间，和新闻正文的开始标签，过滤掉广告无用的图片和广告（iframe广告）
 5.  已经提供了，新闻列表和新闻查询的http服务，为android或者其他客户端完美提供数据源支持
+6.  加入响应式框架skeleton,展示新闻列表，和新闻正文。
 
 
 
@@ -39,6 +47,12 @@ rssSpider
 文章1：http://blog.csdn.net/kissliux/article/details/19560603  
 
 文章2：http://blog.csdn.net/kissliux/article/details/20466889  
+
+
+#2014.3.15 更新日志
+1.  加入响应式框架skeleton，框架一共20kb,适合开发移动网页，
+2.  加入async异步编程控制库，请求所有新闻列表时，使用queue函数进行数据库查询，并发数量为5，访问数据库的数据超快。web响应也在100ms内
+3.  http://localhost:8001/即新闻列表，点击新闻 跳转到新闻正文。  
 
 #2014.3.4  更新日志
 1.  重新架构项目，使用jshint进行代码验证
