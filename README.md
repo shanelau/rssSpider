@@ -3,9 +3,10 @@ rssSpider
 
 #简介#
 
-  网络爬虫，使用NodeJs抓取RSS新闻。提供RSS服务的站点超级多，百度、网易、新浪、虎嗅网 等等站点，基于java  c++、php的rss抓取网上很多。今天说说NodeJs抓取RSS信息
+>网络爬虫，使用NodeJs抓取RSS新闻,抓取的内容包括标题、发布时间、描述、来源、新闻正文、和新闻的图片。同时为客户端提供标准的新闻服务接口。    
 
-  最新做一个新闻项目，项目流程很简单，使用nodejs去网络上面抓取新闻，存到mongodb数据库，然后对客户端提供http服务。客户端的实现网上有很多源码，上一篇文字介绍了，怎么从rss地址抓取新闻的url地址和链接等等，未抓取新闻正文和新闻的概要图片。对于一个新闻客户端来说，没有图片是致命的打击，图文并茂才能吸引用户 。
+提供RSS服务的站点超级多，百度、网易、新浪、虎嗅网等等站点，基于javac++、php的rss抓取网上很多。今天说说NodeJs抓取RSS信息。
+  最新做一个新闻项目，项目流程很简单，使用nodejs去网络上面抓取新闻，存到mongodb数据库，然后对客户端提供http服务。客户端的实现网上有很多源码，本项目没有客户端的实现。怎么从rss地址抓取新闻的url地址和链接，抓取新闻正文和新闻的概要图片。对于一个新闻客户端来说，没有图片是致命的打击，图文并茂才能吸引用户 。
 
   本项目抓取了新闻的标题、来源、url地址、描述、正文、新闻的图片，提供新闻列表服务、单个新闻查询服务，觉得项目还ok，请点个赞吧，哈哈
 
@@ -13,8 +14,8 @@ rssSpider
 项目开发环境：nodejs、mongodb
 
 **运行方式 **
-先加载依赖的库
-<code> npm install -d </code> 
+先加载依赖的库  
+<code> npm install -d </code>   
 
 <code> 
   node app.js
@@ -34,10 +35,10 @@ rssSpider
 
 
 
-项目的详细介绍地址：
-文章1：http://blog.csdn.net/kissliux/article/details/19560603
+项目的详细介绍地址：  
+文章1：http://blog.csdn.net/kissliux/article/details/19560603  
 
-文章2：http://blog.csdn.net/kissliux/article/details/20466889
+文章2：http://blog.csdn.net/kissliux/article/details/20466889  
 
 #2014.3.4  更新日志
 1.  重新架构项目，使用jshint进行代码验证
@@ -53,6 +54,8 @@ rssSpider
 2、加入分页支持
 
 3、使用chreeio插件，遍历web网页全文，抓取新闻标题和url地址。(针对m.baidu.com测试)实验。
+
+>有任何问题，请联系作者：刘兴， kissliux@qq.com
 
 
 
