@@ -19,10 +19,10 @@ rssSpider
 
 <code> 
   node app.js
-</code>
+</code>    
 访问网页新闻列表，和内容
 <code> 
-  直接访问http://localhost:8001
+  直接访问 http://localhost:8001
 </code>
 
 
