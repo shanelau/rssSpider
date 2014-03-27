@@ -30,6 +30,10 @@ nodejs、mongodb
   直接访问 http://localhost:8001
 </code>
 
+注意： 
+1.  在config/rssSite.json 文件中设置了ttl=60   意味着新闻每隔60分钟抓取一次， 所以第一次运行，请先设置ttl为1分钟
+2.  需要先在mongodb中建立数据库 ‘newsServer’
+
 
 
 
