@@ -12,7 +12,7 @@ rssSpider
 
 #项目介绍#
 ###演示地址###
-http://115.29.178.98:8001/  
+http://blog.csdn.net/kissliux/article/details/22663991       
 在手机或者平板上面，显示效果最佳  
 
 ##项目开发环境##
