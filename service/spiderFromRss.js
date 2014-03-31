@@ -32,6 +32,7 @@ function rssSpider(callback){
                                     $("iframe").remove();
                                     $("img[src='"+site.removeElement+"']").remove(); //需要删除的元素，根据项目需求来
                                     post.context = $.html();
+                                    //console.log(post.title);
                                     postService.addPost(post);  //保存到数据库
                                 }
                             });

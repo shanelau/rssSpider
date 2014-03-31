@@ -13,7 +13,7 @@ var sites = rssSite.sites;
 /**
  * 获取新闻列表和类别列表
  * */
-exports.index = function(req, res){
+exports.news_list = function(req, res){
     var newsList = new Array();
     var quene = async.queue(worker,5); //任务队列
     sites.forEach(function(site){
@@ -24,9 +24,12 @@ exports.index = function(req, res){
         });
     });
     quene.drain = function(){
-        res.render('index', { "newsList": newsList });
+        res.render('news_list', { "newsList": newsList });
     }
 };
+exports.index = function(req, res){
+    res.render('index');
+}
 
 function worker(task,callback){
     var news = {};
@@ -57,10 +60,14 @@ exports.getNewsPage = function(req, res){
 exports.newsRecord = function(req, res){
     var postId = req.query.id;
     var userId = req.query.userId;
+    var jsonResult = req.query.jsonData;
     postService.findPost(postId,userId,function(post){
-        res.render("news",
-            {"title":post[0].title,"content":post[0].context}
-        );
+        var data = {"title":post[0].title,"content":post[0].context};
+        if(jsonResult == "true"){
+            res.json(data);
+        }else{
+            res.render("news",data);
+        }
     });
 };
 

@@ -1,6 +1,9 @@
 {
-    "url":"mongodb://127.0.0.1:27017/newsServer",
-    "name":"liux",
+    "url":"mongodb://liux:liux@localhost:27017/newsServer",
+    "username":"liux",
     "password":"liux",
-    "serverSite":"http://127.0.0.1:8001/"
+    "serverSite":"http://127.0.0.1:8001/",
+    "db_name":"newsServer",
+    "db_host":"127.0.0.1",
+    "db_port":"27017"
 }

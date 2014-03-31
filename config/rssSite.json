@@ -10,23 +10,23 @@
             "channel":
                 [
                     {
-                        "title":"innos头条",
+                        "title":"头条",
                         "link":"http://news.163.com/special/00011K6L/rss_newstop.xml",
                         "typeId":1
                     },
                     {
-                        "title":"innos最新新闻",
+                        "title":"最新新闻",
                         "link":"http://news.163.com/special/00011K6L/rss_gn.xml",
                         "typeId":2
                     },
                     {
-                        "title":"innos国际新闻",
+                        "title":"国际新闻",
                         "link":"http://news.163.com/special/00011K6L/rss_gj.xml",
                         "typeId":3,
                         "contentTag":"#endText"
                     },
                     {
-                        "title":"innos社会新闻",
+                        "title":"社会新闻",
                         "link":"http://news.163.com/special/00011K6L/rss_sh.xml",
                         "typeId":4
                     }

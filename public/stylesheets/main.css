@@ -1,0 +1,41 @@
+a{
+    text-decoration: none;
+}
+.typeName{
+    color:#be2c37;
+}
+.news_list{
+    clear:left;
+}
+.news_list ul li{
+    clear:left;
+    height: 56px;
+    border-bottom: 1px solid #efefef;
+    padding: 10px 0;
+}
+
+.news_list ul li a{
+    vertical-align: top;
+    height:auto;display:inline;
+}
+.news_list ul li img{
+    width:70px;
+    height:52px;
+    padding-right: 10px;
+    float: left;
+
+}
+.news_list ul li .news_item{
+    width: 70%;
+    margin-top: 0px;
+    position: relative;
+    float: left;
+}
+
+
+.news_list ul li p{
+    line-height: 16px;
+    margin-left: 3px;
+    height: 40px;
+    overflow: hidden;
+}

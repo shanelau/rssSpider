@@ -1,83 +1,244 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:wb="http://open.weibo.com/wb">
 <head>
     <meta http-equiv="Content-Type" content='text/html;charset=utf-8'>
-    <title>每日新闻播报</title>
+    <title>免费新闻API</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="liuxing">
+    <meta name="desc" content="liuxing">
+    <meta property="wb:webmaster" content="546f05fdcea47529" />
+    <link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="stylesheets/base.css">
-    <link rel="stylesheet" href="stylesheets/skeleton.css">
-    <link rel="stylesheet" href="stylesheets/layout.css">
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <link rel="shortcut icon" href="images/favicon.ico">
-    <style>
-        a{
-            text-decoration: none;
-        }
-        .typeName{
-            color:#be2c37;
-        }
-        .news_list{
-            clear:left;
-        }
-        .news_list ul li{
-            clear:left;
-            height: 56px;
-            border-bottom: 1px solid #efefef;
-            padding: 10px 0;
-        }
+    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=appkey" type="text/javascript" charset="utf-8"></script>
 
-        .news_list ul li a{
-            vertical-align: top;
-            height:auto;display:inline;
-        }
-        .news_list ul li img{
-            width:70px;
-            height:52px;
-            padding-right: 10px;
-            float: left;
-
-        }
-        .news_list ul li .news_item{
-            width: 70%;
-            margin-top: 0px;
-            position: relative;
-            float: left;
-        }
-
-
-        .news_list ul li p{
-            line-height: 16px;
-            margin-left: 3px;
-            height: 40px;
-            overflow: hidden;
-        }
-
-    </style>
 </head>
 <body>
+
 <div class="container">
-    <% for(var j=0;j<newsList.length;j++){%>
-        <h4 class="columns twelve typeName"><%=newsList[j].typeName %></h4>
-        <div class="columns twelve news_list">
-            <ul>
-                <% for(var i=0; i<newsList[j].posts.length; i++) {%>
-                <li class="">  <a href="newsRecord?userId=liux&id=<%=newsList[j].posts[i]._id %>" class="columns twelve" target="_blank">
-                        <img src="<%= newsList[j].posts[i].descImg%>"/>
-                        <div class="news_item">
-                            <p ><%= newsList[j].posts[i].title %></p>
-                        </div>
-                    </a>
 
-                </li>
-                <% } %>
-            </ul>
+    <div class="masthead">
+        <h3 class="text-muted">免费新闻API--create by liuxing</h3>
+    </div>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+        <p class="lead">本项目使用node.js抓取RSS站点新闻，抓取分析新闻的正文和图片，并对外提供统一服务接口，方便广大用户利用新闻的数据来开发自己的应用，本服务完全免费!</p>
+        <p><a class="btn btn-lg btn-info" target="_blank" href="news_list" role="button">Try it!</a>
+            <a class="btn btn-lg btn-primary" style="margin-left: 10px;" href="https://github.com/kissliux/rssSpider" role="button">Github</a></p>
+    </div>
+
+    <!-- Example row of columns -->
+    <div class="panel panel-primary">
+        <div class="panel-heading">1. 新闻列表API</div>
+        <div class="panel-body">
+
+
+
+
+            <h3>1. 客户端 GET 请求格式</h3>
+            <blockquote>
+                <span>示例:</span>
+                <a target="_blank" href="getNewsPage?page=0&maxNums=5&typeId=1&pic=true" class="btn btn-info">demo</a>
+                <p class="text-primary">http://127.0.0.1:8001/getNewsPage?page=0&maxNums=5&typeId=3&pic=true</p>
+            </blockquote>
+
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>参数名</th>
+                    <th>值类型</th>
+                    <th>是否必须</th>
+                    <th>默认值</th>
+                    <th>描述</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>page</td>
+                    <td>Int </td>
+                    <td>否</td>
+                    <td>0</td>
+                    <td>请求新闻的页数</td>
+                </tr>
+                <tr>
+                    <td>maxNums</td>
+                    <td>Int </td>
+                    <td>是</td>
+                    <td>10</td>
+                    <td>每页显示的新闻数量</td>
+                </tr><tr>
+                    <td>page</td>
+                    <td>Int </td>
+                    <td>否</td>
+                    <td>1</td>
+                    <td>新闻类别,比如新闻头条 typId值为1，最新新闻值为2，国际新闻 3，社会新闻值为4</td>
+                </tr>
+                <tr>
+                    <td>pic</td>
+                    <td>Boolean</td>
+                    <td>false</td>
+                    <td>0</td>
+                    <td>pic等于true 则返回图片的地址，其他情况不会返回图片</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
-    <hr>
-    <%}%>
-</div>
 
+        <h3>1.1  新闻列表--服务器端响应(json格式)</h3>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>参数名</th>
+                <th>值类型</th>
+                <th>描述</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>title</td>
+                <td>String</td>
+                <td>新闻标题</td>
+            </tr>
+            <tr>
+                <td>pubDate</td>
+                <td>String</td>
+                <td>新闻发布日期</td>
+            </tr>
+            <tr>
+                <td>typeId </td>
+                <td>Number</td>
+                <td>类型编号</td>
+            </tr>
+            <tr>
+                <td>_id</td>
+                <td>String</td>
+                <td>新闻编号</td>
+            </tr>
+            <tr>
+                <td>Page</td>
+                <td>Number</td>
+                <td>当前页数</td>
+            </tr>
+            <tr>
+                <td>descImg</td>
+                <td>String</td>
+                <td>新闻编号</td>
+            </tr>
+
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">1. 新闻正文API</div>
+        <div class="panel-body">
+            <h3>2. 客户端 GET 请求格式</h3>
+            <blockquote>
+                <span>示例:</span>
+                <a target="_blank" href="newsRecord?userId=liux&id=533674ee4e06651ceba21fd4&jsonData=true" class="btn btn-info">demo</a>
+                <p class="text-primary">http://127.0.0.1:8002/newsRecord?userId=liux&id=533674ee4e06651ceba21fd4&jsonData=true</p>
+            </blockquote>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>参数名</th>
+                    <th>值类型</th>
+                    <th>是否必须</th>
+                    <th>默认值</th>
+                    <th>描述</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>id</td>
+                    <td>String</td>
+                    <td>是</td>
+                    <td>无</td>
+                    <td>新闻编号 _id</td>
+                </tr>
+                <tr>
+                    <td>jsonData</td>
+                    <td>boolean</td>
+                    <td>否</td>
+                    <td>false</td>
+                    <td>值为true,则返回json格式数据，否则返回html网页格式数据</td>
+                </tr>
+                <tr>
+                    <td>userId</td>
+                    <td>String</td>
+                    <td>否</td>
+                    <td>无</td>
+                    <td>用户的标志,统计用户访问习惯</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <h3>2.1  新闻正文--服务器端响应 (json格式)</h3>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>参数名</th>
+                <th>值类型</th>
+                <th>描述</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>title</td>
+                <td>String</td>
+                <td>新闻标题</td>
+            </tr>
+            <tr>
+                <td>context</td>
+                <td>String</td>
+                <td>新闻正文</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="row " style="padding-top: 20px;" >
+        <p class="text-danger" style="font-size: 15px;"></p>
+    </div>
+    <h2 style="margin-top: 50px;">有什么想跟我说的，告诉我吧</h2>
+    <div class="alert alert-success">目前抓取的新闻类型只包含四类，头条、最新，国际、社会,如果觉得新闻类别偏少，或者有商业用途，请直接联系我:  <a href="kissliux@qq.com">kissliux@qq.com</a></div>
+
+
+
+
+    <div class="row">
+        <div class="col-xs-12">
+            <wb:comments url="auto" brandline="y" width="auto" ralateuid="2737334170" ></wb:comments>
+        </div>
+    </div>
+
+    <!-- Site footer -->
+    <div class="footer">
+        <p>&copy; Designed and built with all the love in the world by liuxing</p>
+    </div>
+
+</div> <!-- /container -->
+
+<script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-49239958-1', '58.60.184.212:8002');
+    ga('send', 'pageview');
+
+</script>
 </body>
 </html>
