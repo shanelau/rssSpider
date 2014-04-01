@@ -7,7 +7,6 @@ var request = require('request');
 var iconv = require('iconv-lite');
 var BufferHelper = require('bufferhelper')
     , FeedParser = require('feedparser')
-    , Iconv = require('iconv').Iconv;
 var Post = require('../model/Post');
 var cheerio = require('cheerio');
 
@@ -98,21 +97,10 @@ function fetchRSS(url,typeId,callback) {
     // Define our handlers
     req.on('error', done);
     req.on('response', function(res) {
-        var stream = this
-            , iconv
-            , charset;
+        var stream = this;
         posts = [];
         if (res.statusCode !== 200){ return this.emit('error', new Error('Bad status code'));}
-        charset = getParams(res.headers['content-type'] || '').charset;
-        if (!iconv && charset && !/utf-*8/i.test(charset)) {
-            try {
-                iconv = new Iconv(charset, 'utf-8');
-                iconv.on('error', done);
-                stream = this.pipe(iconv);
-            } catch(err) {
-                this.emit('error', err);
-            }
-        }
+        //charset = getParams(res.headers['content-type'] || '').charset;
         stream.pipe(feedparser);
     });
     feedparser.on('error', done);

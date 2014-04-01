@@ -1,6 +1,7 @@
 {
-  "name": "application-name",
+  "name": "newsSpider",
   "version": "0.0.1",
+  "author":"liux.xing",
   "private": true,
   "scripts": {
     "start": "node app.js"

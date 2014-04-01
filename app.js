@@ -21,7 +21,7 @@ var interval = rssSite.ttl*60*1000; //运行间隔时间
 var app = express();
 
 // all environments
-app.set('port', process.env.PORT || 8002);
+app.set('port', process.env.PORT || 8001);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.favicon());

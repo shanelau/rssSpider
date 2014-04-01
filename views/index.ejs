@@ -3,9 +3,11 @@
 <head>
     <meta http-equiv="Content-Type" content='text/html;charset=utf-8'>
     <title>免费新闻API</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="author" content="liuxing">
-    <meta name="desc" content="liuxing">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="baidu-site-verification" content="Ja1wnRLz01" />
+    <meta name="author" content="kissliux@qq.com">
+    <meta name="keywords" content="新闻爬虫，免费，新闻api,新闻API,接口，开源">
+    <meta name="description" content="免费新闻开放平台，旨在为开发者提供免费新闻API服务">
     <meta property="wb:webmaster" content="546f05fdcea47529" />
     <link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
 
@@ -43,7 +45,7 @@
             <blockquote>
                 <span>示例:</span>
                 <a target="_blank" href="getNewsPage?page=0&maxNums=5&typeId=1&pic=true" class="btn btn-info">demo</a>
-                <p class="text-primary">http://127.0.0.1:8001/getNewsPage?page=0&maxNums=5&typeId=3&pic=true</p>
+                <p class="text-primary">http://newsapi.duapp.com/getNewsPage?page=0&maxNums=5&typeId=3&pic=true</p>
             </blockquote>
 
             <table class="table table-hover">
@@ -71,17 +73,17 @@
                     <td>10</td>
                     <td>每页显示的新闻数量</td>
                 </tr><tr>
-                    <td>page</td>
+                    <td>typeId</td>
                     <td>Int </td>
-                    <td>否</td>
+                    <td>是</td>
                     <td>1</td>
                     <td>新闻类别,比如新闻头条 typId值为1，最新新闻值为2，国际新闻 3，社会新闻值为4</td>
                 </tr>
                 <tr>
                     <td>pic</td>
                     <td>Boolean</td>
+                    <td>否</td>
                     <td>false</td>
-                    <td>0</td>
                     <td>pic等于true 则返回图片的地址，其他情况不会返回图片</td>
                 </tr>
                 </tbody>
@@ -119,7 +121,7 @@
                 <td>新闻编号</td>
             </tr>
             <tr>
-                <td>Page</td>
+                <td>page</td>
                 <td>Number</td>
                 <td>当前页数</td>
             </tr>
@@ -143,7 +145,7 @@
             <blockquote>
                 <span>示例:</span>
                 <a target="_blank" href="newsRecord?userId=liux&id=533674ee4e06651ceba21fd4&jsonData=true" class="btn btn-info">demo</a>
-                <p class="text-primary">http://127.0.0.1:8002/newsRecord?userId=liux&id=533674ee4e06651ceba21fd4&jsonData=true</p>
+                <p class="text-primary">http://newsapi.duapp.com/newsRecord?userId=liux&id=533674ee4e06651ceba21fd4&jsonData=true</p>
             </blockquote>
             <table class="table table-hover">
                 <thead>
@@ -208,7 +210,7 @@
     <div class="row " style="padding-top: 20px;" >
         <p class="text-danger" style="font-size: 15px;"></p>
     </div>
-    <h2 style="margin-top: 50px;">有什么想跟我说的，告诉我吧</h2>
+    <h2 style="margin-top: 50px;">有什么想跟我说的，告诉我吧。或者你还可以<a class="btn btn-success" href="https://me.alipay.com/kissliux" target="_blank">捐赠我一杯啤酒吧</a></h2>
     <div class="alert alert-success">目前抓取的新闻类型只包含四类，头条、最新，国际、社会,如果觉得新闻类别偏少，或者有商业用途，请直接联系我:  <a href="kissliux@qq.com">kissliux@qq.com</a></div>
 
 
