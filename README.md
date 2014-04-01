@@ -12,7 +12,7 @@ rssSpider
 
 #项目介绍#
 ###演示地址###
-http://blog.csdn.net/kissliux/article/details/22663991       
+http://newsapi.duapp.com/         
 在手机或者平板上面，显示效果最佳  
 
 ##项目开发环境##
@@ -75,7 +75,8 @@ nodejs、mongodb
 
 
 #2014.2.27 更新日志
-1、使用express 提供新闻服务，为android客户端和其他客户端提供服务
+1、使用express 提供新闻服务，为android客户端和其他客户端提供服务  
+2.  解决linux安装问题，去除iconv库
 
 2、加入分页支持
 
