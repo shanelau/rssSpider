@@ -12,7 +12,7 @@ rssSpider
 
 #项目介绍#
 ###演示地址###
-http://newsapi.duapp.com/         
+http://kissliux.github.io/            
 在手机或者平板上面，显示效果最佳  
 
 ##项目开发环境##
