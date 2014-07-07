@@ -1,48 +1,51 @@
-rssSpider
-=========
+# rssSpider
 
-#简介#
+Design and coding with all the love in the world by ShaneLau.
 
->网络爬虫，使用NodeJs抓取RSS新闻,抓取的内容包括标题、发布时间、描述、来源、新闻正文、和新闻的图片。同时为客户端提供标准的新闻服务接口。    
 
-提供RSS服务的站点超级多，百度、网易、新浪、虎嗅网等等站点，基于javac++、php的rss抓取网上很多。今天说说NodeJs抓取RSS信息。
-  最新做一个新闻项目，项目流程很简单，使用nodejs去网络上面抓取新闻，存到mongodb数据库，然后对客户端提供http服务。客户端的实现网上有很多源码，本项目没有客户端的实现。怎么从rss地址抓取新闻的url地址和链接，抓取新闻正文和新闻的概要图片。对于一个新闻客户端来说，没有图片是致命的打击，图文并茂才能吸引用户 。
+> Web crawler, use NodeJs grab the RSS news, fetching the contents of the include title,released time, description, source,content and images . At the same time for the client to provide the standard news service interface.    
 
-  本项目抓取了新闻的标题、来源、url地址、描述、正文、新闻的图片，提供新闻列表服务、单个新闻查询服务，觉得项目还ok，请点个赞吧，哈哈
 
-#项目介绍#
-###演示地址###
+
+Use nodejs captured above to network news, then insert into mongodb .
+How the RSS news and links to the url address and grab a summary of the news text and the news pictures For a news client, without pictures is a fatal blow, illustrated to attract users.
+
+
+
+## What's included
+This project grabbed headlines news source,url,description,images,content.
+Provide list query and single news query services.
+
+
+### Demo
 http://kissliux.github.io/            
-在手机或者平板上面，显示效果最佳  
 
-##项目开发环境##
+
+## Environment
 nodejs、mongodb
 
-##运行方式 ##
-先加载依赖的库  
-<code> npm install -d </code>   
+## Usage ##
+```
+ npm install -d    
 
-<code> 
-  node app.js
-</code>    
-访问网页新闻列表，和内容
-<code> 
-  直接访问 http://localhost:8001
-</code>
+ node app.js
+    
+```
+spide will begin after five seconds.
+cpoy to broswer
 
-#注意：  
-1.  在config/rssSite.json 文件中设置了ttl=60   意味着新闻每隔60分钟抓取一次， 所以第一次运行，请先设置ttl为1分钟   
-2.  需要先在mongodb中建立数据库 ‘newsServer’   
+```
+ http://localhost:8002
 
+```
 
 
 
-**本项目以网易的rss进行测试 http://www.163.com/rss**
-
-**关键抓取代码，在service目录**
+** Test rss : http://www.163.com/rss **
 
 
-##项目特色##
+
+## Features ##
 1.  多站点同时抓取，需要抓取的站点可以在配置文件中配置
 2.  抓取的新闻正文的准确率非常高，包括图片
 3.  nodejs实现，抓取效率非常高
@@ -52,21 +55,25 @@ nodejs、mongodb
 
 
 
-项目的详细介绍地址：  
-文章1：http://blog.csdn.net/kissliux/article/details/19560603  
+blog ：
+  
+http://blog.csdn.net/kissliux/article/details/19560603  
 
-文章2：http://blog.csdn.net/kissliux/article/details/20466889  
+http://blog.csdn.net/kissliux/article/details/20466889  
 
-#2014.3.31  更新日志  
+>If you have any question,please tell me， shanelau1021@gmail.com
+
+
+#2014.3.31  update logs  
 1.  加入index.ejs页面，直接在web界面查看新闻的api接口，请求和响应的数据格式  
 
 
-#2014.3.15 更新日志
+#2014.3.15 update logs
 1.  加入响应式框架skeleton，框架一共20kb,适合开发移动网页，
 2.  加入async异步编程控制库，请求所有新闻列表时，使用queue函数进行数据库查询，并发数量为5，访问数据库的数据超快。web响应也在100ms内
 3.  http://localhost:8001/即新闻列表，点击新闻 跳转到新闻正文。  
 
-#2014.3.4  更新日志
+#2014.3.4  update logs
 1.  重新架构项目，使用jshint进行代码验证
 2.  RSS抓取到新闻链接后，继续抓取新闻正文，提取出新闻正文中的有用图片、和正文。 新闻进行列表显示的时候，如果有图片，更能吸引眼球，本项目抓取网易的新闻正和图片，正确率在90%以上
 3.  为其他客户端提供新闻查询的http服务，查询新闻列表(标题、图片、描述)，获取新闻正文
@@ -82,7 +89,7 @@ nodejs、mongodb
 
 3、使用chreeio插件，遍历web网页全文，抓取新闻标题和url地址。(针对m.baidu.com测试)实验。
 
->有任何问题，请联系作者：刘兴， kissliux@qq.com
+
 
 
 

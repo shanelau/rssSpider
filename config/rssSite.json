@@ -1,5 +1,5 @@
 {
-    "ttl":240,
+    "ttl":60,
     "sites":
     [
         {
@@ -15,15 +15,14 @@
                         "typeId":1
                     },
                     {
-                        "title":"最新新闻",
-                        "link":"http://news.163.com/special/00011K6L/rss_gn.xml",
+                        "title":"娱乐新闻",
+                        "link":"http://ent.163.com/special/00031K7Q/rss_toutiao.xml",
                         "typeId":2
                     },
                     {
                         "title":"国际新闻",
                         "link":"http://news.163.com/special/00011K6L/rss_gj.xml",
-                        "typeId":3,
-                        "contentTag":"#endText"
+                        "typeId":3
                     },
                     {
                         "title":"社会新闻",

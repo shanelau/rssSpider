@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:wb="http://open.weibo.com/wb">
+<html>
 <head>
     <meta http-equiv="Content-Type" content='text/html;charset=utf-8'>
     <title>免费新闻API</title>
@@ -29,18 +29,14 @@
     <!-- Jumbotron -->
     <div class="jumbotron">
         <p class="lead">本项目使用node.js抓取RSS站点新闻，抓取分析新闻的正文和图片，并对外提供统一服务接口，方便广大用户利用新闻的数据来开发自己的应用，本服务完全免费!</p>
-        <p><a class="btn btn-lg btn-info" target="_blank" href="news_list" role="button">Try it!</a>
-            <a class="btn btn-lg btn-primary" style="margin-left: 10px;" href="https://github.com/kissliux/rssSpider" role="button">Github</a></p>
+        <p><a class="btn btn-lg btn-info" target="_blank" href="list" role="button">Try it!</a>
+            <a class="btn btn-lg btn-primary" style="margin-left: 10px;" href="https://github.com/kissliux/rssSpider" role="button">star me</a></p>
     </div>
 
     <!-- Example row of columns -->
     <div class="panel panel-primary">
         <div class="panel-heading">1. 新闻列表API</div>
         <div class="panel-body">
-
-
-
-
             <h3>1. 客户端 GET 请求格式</h3>
             <blockquote>
                 <span>示例:</span>
@@ -143,7 +139,7 @@
         <div class="panel-body">
             <h3>2. 客户端 GET 请求格式</h3>
             <blockquote>
-                <span>示例:</span>
+                <span>示例:(或许你需要改变 id的值，id的值见post表)</span>
                 <a target="_blank" href="newsRecord?userId=liux&id=533674ee4e06651ceba21fd4&jsonData=true" class="btn btn-info">demo</a>
                 <p class="text-primary">http://newsapi.duapp.com/newsRecord?userId=liux&id=533674ee4e06651ceba21fd4&jsonData=true</p>
             </blockquote>
@@ -210,21 +206,14 @@
     <div class="row " style="padding-top: 20px;" >
         <p class="text-danger" style="font-size: 15px;"></p>
     </div>
-    <h2 style="margin-top: 50px;">有什么想跟我说的，告诉我吧。或者你还可以<a class="btn btn-success" href="https://me.alipay.com/kissliux" target="_blank">捐赠我一杯啤酒吧</a></h2>
-    <div class="alert alert-success">目前抓取的新闻类型只包含四类，头条、最新，国际、社会,如果觉得新闻类别偏少，或者有商业用途，请直接联系我:  <a href="kissliux@qq.com">kissliux@qq.com</a></div>
+    <h2 style="margin-top: 50px;">If you have any question,please tell me.</h2>
+    <div class="alert alert-success">目前抓取的新闻类型只包含四类，头条、最新，国际、社会,如果觉得新闻类别偏少，或者其他任何问题，请直接联系我:  <a href="kissliux@qq.com">kissliux@qq.com</a></div>
 
 
-
-
-    <div class="row">
-        <div class="col-xs-12">
-            <wb:comments url="auto" brandline="y" width="auto" ralateuid="2737334170" ></wb:comments>
-        </div>
-    </div>
 
     <!-- Site footer -->
     <div class="footer">
-        <p>&copy; Designed and built with all the love in the world by liuxing</p>
+        <p>&copy; Design and coding with all the love in the world by liuxing</p>
     </div>
 
 </div> <!-- /container -->
@@ -232,15 +221,5 @@
 <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
 
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-49239958-1', '58.60.184.212:8002');
-    ga('send', 'pageview');
-
-</script>
 </body>
 </html>

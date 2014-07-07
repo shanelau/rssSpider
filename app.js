@@ -21,7 +21,7 @@ var interval = rssSite.ttl*60*1000; //运行间隔时间
 var app = express();
 
 // all environments
-app.set('port', process.env.PORT || 8001);
+app.set('port', process.env.PORT || 8002);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.favicon());
@@ -47,22 +47,25 @@ app.configure('production', function() {
     });
 });
 app.get('/', routes.index);
-app.get('/news_list', routes.news_list);
+app.get('/list', routes.news_list);
 app.get('/getNewsPage', routes.getNewsPage);
 app.get('/newsRecord', routes.newsRecord);
 app.get('/users', user.list);
 
-
- DB.init();
+DB.init();
 //爬虫开始
-(function schedule(){
-    setTimeout(function(){
+setTimeout(function(){
+    spider.rssSpider(function(){
+        console.log('第一轮抓取完毕');
+    });
+    setInterval(function(){
         spider.rssSpider(function(){
-            schedule();
+            console.log('第一轮定时抓取完毕');
         });
     },interval);
-})();
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
+},5000);
 
+
+http.createServer(app).listen(app.get('port'), function(){
+  console.log('Running successfully ! copy url    http://127.0.0.1:8002/  to browser');
 });

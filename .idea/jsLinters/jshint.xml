@@ -14,7 +14,6 @@
     <option noempty="true" />
     <option nonew="true" />
     <option plusplus="true" />
-    <option regexp="true" />
     <option undef="true" />
     <option unused="true" />
     <option strict="false" />
@@ -23,7 +22,6 @@
     <option boss="true" />
     <option debug="true" />
     <option eqnull="true" />
-    <option es5="false" />
     <option esnext="true" />
     <option evil="true" />
     <option expr="true" />
@@ -36,8 +34,6 @@
     <option loopfunc="true" />
     <option multistr="true" />
     <option proto="true" />
-    <option onecase="true" />
-    <option regexdash="true" />
     <option scripturl="true" />
     <option smarttabs="true" />
     <option shadow="true" />
