@@ -18,7 +18,8 @@ Provide list query and single news query services.
 
 
 ### Demo
-http://kissliux.github.io/            
+
+http://kissliux.github.io/blog/2014/07/07/rss-spide/         
 
 
 ## Environment
@@ -38,8 +39,6 @@ cpoy to broswer
  http://localhost:8002
 
 ```
-
-
 
 ** Test rss : http://www.163.com/rss **
 
