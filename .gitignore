@@ -1,5 +1,6 @@
 */node-log.log
-logs/*.log
 *.log
+!logs/
 !.gitignore
 node_modules/*
+
