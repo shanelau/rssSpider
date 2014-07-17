@@ -19,7 +19,7 @@ Provide list query and single news query services.
 
 ### Demo
 
-http://kissliux.github.io/blog/2014/07/07/rss-spide/         
+http://kissliux.github.io/2014/07/07/rss-spide/      
 
 
 ## Environment
