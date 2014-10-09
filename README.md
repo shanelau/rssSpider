@@ -101,7 +101,7 @@ Turn any web page into a clean view. This module is based on arc90's readability
   ```
   var url = 'http://www.bigertech.com/learn-social-media-marketing/';
   spide.getCleanBody(url).then(function(article){
-        console.log(article);   //clean code view    
+        console.log(article.content);   //clean code view    
     });
   ```
   
