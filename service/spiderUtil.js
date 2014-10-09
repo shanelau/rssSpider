@@ -3,12 +3,11 @@
  *  html页面正文
  *  解决中文乱码问题
  */
-var request = require('request');
-var iconv = require('iconv-lite');
-var BufferHelper = require('bufferhelper')
-    , FeedParser = require('feedparser')
-var Post = require('../model/Post');
-var cheerio = require('cheerio');
+var request         = require('request'),
+    iconv           = require('iconv-lite'),
+    BufferHelper    = require('bufferhelper'),
+    FeedParser      = require('feedparser'),
+    when            = require('when');
 
 
 /**抓取网页全文源代码、主要用来抓取新闻正文
@@ -34,27 +33,6 @@ function fetchContent(url,calback){
             calback(result);
         });
     });
-}
-/**
- * title 求子串，可以更加自己项目来决定是否需要对，取到的值进行截取或者转换
- * rss抓取的data转换为 自己定义的model对象
- * @param post
- * @returns {Post}
- */
-function transToPost(post,typeId){
-    var index = post.description.indexOf("......");  //去掉多余新闻分享标签
-    if(index > 0){
-        post.description = post.description.substr(0,index)+"......";
-    }
-    var mPost = new Post({
-        title : post.title,
-        link :  post.link,
-        description : post.description,
-        pubDate : post.pubDate,
-        source : post.source,
-        typeId : typeId
-    });
-    return mPost;
 }
 /**
  * response 参数处理
@@ -84,8 +62,9 @@ function done(err) {
  * @param typeId 新闻类别ID、这个参数根据项目情况定，可以删掉
  * @param callback
  */
-function fetchRSS(url,typeId,callback) {
+function fetchRSS(url) {
     var posts;
+    var defer = when.defer();
     // Define our streams
     var req = request(url, {timeout: 10000, pool: false});
     req.setMaxListeners(50);
@@ -106,41 +85,23 @@ function fetchRSS(url,typeId,callback) {
     feedparser.on('error', done);
     feedparser.on('end', function(err){
         if(err){
-            console.log(err);
+            console.error(err);
             return;
         }
-       callback(posts);
+       defer.resolve(posts);
     });
     feedparser.on('readable', function() {
         var post;
         while (post = this.read()) {
-            posts.push(transToPost(post,typeId));//添加到数组
+            posts.push(post);//添加到数组
         }
     });
+    return defer.promise;
 }
 
 
-/**
- * 截取单个新闻的正文，
- * @param url 新闻的url地址
- * @param tag 新闻在web界面开始的标签 如:<div id='content'>新闻正文</div>。 content即为tag
- */
-function getNewsContent(url,tag,callback){
-    console.log(url);
-    fetchContent(url,function(htmlData){
-        var $ = cheerio.load(htmlData);
-        var context = $(tag).html();
-        var img = $(tag).find("img")[0];
-        var imgPath ;
-        if(img !== null){
-            imgPath = $(img).attr("src");  //新闻的缩略图
-        }
-        callback(context,imgPath);   //回调新闻正文和图片
-    });
-}
 exports.fetchRSS = fetchRSS;
 exports.fetchContent = fetchContent;
-exports.getNewsContent = getNewsContent;
 
 
 /*getNewsContent("http://news.163.com/14/0303/02/9MCM2V4Q00014AED.html","#endText",function(context,imgPath){
