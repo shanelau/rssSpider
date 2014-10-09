@@ -14,7 +14,7 @@ This project is base on [feedparser](https://github.com/kballard/feedparser) and
 ## Usage  
 
 ```
-npm install rssspide
+npm install rssspider
 ```
 Then:
 
@@ -27,21 +27,21 @@ spide.fetchRss(url).then(function(data){
 
 ## API Documentation
 
-** <code>fetchRss(url,[options])</code> **  
+### 1. <code>fetchRss(url,[options])</code> 
 	
-	get rss site'post list  ,like this  [www.bigertech.com/rss]http://www.bigertech.com/rss
+get rss site'post list  ,like this  [www.bigertech.com/rss]http://www.bigertech.com/rss
 
-	*  **url** : webiste'rss url 
-    *  **options** :what data you need ?  default value:
+*  **url** : webiste'rss url 
+*  **options** :what data you need ?  default value:
 	
-	```
+```
 	['title','description','summary','date','link','guid','author','comments','origlink','image','source','categories','enclosures']
-	```  
-	response data
-	**Array**  
-	
-	```
-	[{ title: '一个营销人员的自我修养',
+```  
+response data
+**Array**  
+
+```
+[{ title: '一个营销人员的自我修养',
   description: '<p></p>',
   summary: '</p>',
   date: Wed Oct 08 2014 17:14:26 GMT+0800 (CST),
@@ -56,18 +56,20 @@ spide.fetchRss(url).then(function(data){
   enclosures: [] },
   ....  // more
 	]
-	```
+
+```
   
-** <code>siteInfo(url,[options])</code>  **
-    get website info
-    * **url**   webiste'rss url
-    * **options**  what data you need ?  default value:
+### 2. <code>siteInfo(url,[options])</code> 
+get website info  
+
+* **url**   webiste'rss url
+* **options**  what data you need ?  default value:
     
     ```
 ['title','description','date','link','xmlurl','author','favicon','copyright','generator','image']
 
     ```
-   response data **Array** 
+response data **Array** 
    
    ```
   { title: '笔戈科技',
@@ -85,9 +87,9 @@ spide.fetchRss(url).then(function(data){
 
 
 
-** `getCleanBody(url)` **
+### 3. `getCleanBody(url)`
 
-Where
+Turn any web page into a clean view. This module is based on arc90's readability project.  
 
   * **html** url or html code.
   * **options** is an optional options object
@@ -103,8 +105,6 @@ Where
   
 ##### More info [node-readability](https://github.com/luin/node-readability)
 
-Turn any web page into a clean view. This module is based on arc90's readability project.
-  
 
 #### article.content  is clean view 
 
@@ -112,7 +112,7 @@ The article content of the web page. Return `false` if failed.
 
 
 
-**<code>getAllByUrl(url,[options])</code>**
+### 4. <code>getAllByUrl(url,[options])</code>
 This method is similar to ** fetchRss **  
 	What'more ,it fetch the clean page content.
 	Turn any web page into a clean view. This module is based on arc90's readability project.
@@ -126,8 +126,8 @@ get clean view code
 	
 ```  
 
-	[{ title: '一个营销人员的自我修养',
-	content:'clean code view',     // clean code view
+[{ title: '一个营销人员的自我修养',
+   content:'clean code view',     // clean code view
   description: '<p></p>',
   summary: '</p>',
   date: Wed Oct 08 2014 17:14:26 GMT+0800 (CST),

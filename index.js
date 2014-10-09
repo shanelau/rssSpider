@@ -1,14 +1,14 @@
 /**
  * Created by liuxing on 14-9-22.
  */
-var Promise         = require('bluebird'),
-    FeedParser      = require('feedparser'),
-    _               = require('lodash'),
-    request         = require('request'),
-    read            = require('node-readability'),
-    postOptions = ['title','description','summary','date','link',
-        'guid','author','comments','origlink','image','source','categories','enclosures'],
-    siteInfoOption = ['title','description','date','link','xmlurl','author','favicon','copyright','generator','image'];
+var Promise = require('bluebird'),
+    FeedParser = require('feedparser'),
+    _ = require('lodash'),
+    request = require('request'),
+    read = require('node-readability'),
+    postOptions = ['title', 'description', 'summary', 'date', 'link',
+        'guid', 'author', 'comments', 'origlink', 'image', 'source', 'categories', 'enclosures'],
+    siteInfoOption = ['title', 'description', 'date', 'link', 'xmlurl', 'author', 'favicon', 'copyright', 'generator', 'image'];
 
 /**
  * get  all post info ,by rss url
@@ -16,10 +16,10 @@ var Promise         = require('bluebird'),
  * @param options
  * @returns {Promise}
  */
-function fetchRss(url,options) {
+function fetchRss(url, options) {
     options = options || postOptions;
 
-    return new Promise(function(resolve,reject) {
+    return new Promise(function (resolve, reject) {
         var posts;
         var req = request(url, {timeout: 10000, pool: false});
         req.setMaxListeners(50);
@@ -28,24 +28,26 @@ function fetchRss(url,options) {
 
         var feedparser = new FeedParser();
         req.on('error', reject);
-        req.on('response', function(res) {
+        req.on('response', function (res) {
             var stream = this;
             posts = [];
-            if (res.statusCode !== 200){ return this.emit('error', new Error('Bad status code'));}
+            if (res.statusCode !== 200) {
+                return this.emit('error', new Error('Bad status code'));
+            }
             //charset = getParams(res.headers['content-type'] || '').charset;
             stream.pipe(feedparser);
         });
         feedparser.on('error', reject);
-        feedparser.on('end', function(err) {
-            if(err){
+        feedparser.on('end', function (err) {
+            if (err) {
                 reject(err);
             }
             resolve(posts);
         });
-        feedparser.on('readable', function() {
+        feedparser.on('readable', function () {
             var post;
             while (post = this.read()) {
-                var post = _.pick(post,options);
+                var post = _.pick(post, options);
                 posts.push(post);//添加到数组
             }
         });
@@ -57,9 +59,9 @@ function fetchRss(url,options) {
  * @param options
  * @returns {Promise}
  */
-function siteInfo(url,options) {
+function siteInfo(url, options) {
     options = options || siteInfoOption;
-    return new Promise(function(resolve,reject) {
+    return new Promise(function (resolve, reject) {
         var rss;
         var req = request(url, {timeout: 10000, pool: false});
         req.setMaxListeners(50);
@@ -68,23 +70,25 @@ function siteInfo(url,options) {
         req.setHeader('accept', 'text/html,application/xhtml+xml');
         var feedparser = new FeedParser();
         req.on('error', reject);
-        req.on('response', function(res) {
+        req.on('response', function (res) {
             var stream = this;
-            if (res.statusCode !== 200){ return this.emit('error', new Error('Bad status code'));}
+            if (res.statusCode !== 200) {
+                return this.emit('error', new Error('Bad status code'));
+            }
             //charset = getParams(res.headers['content-type'] || '').charset;
             stream.pipe(feedparser);
         });
         feedparser.on('error', reject);
-        feedparser.on('end', function(err) {
-            if(err){
+        feedparser.on('end', function (err) {
+            if (err) {
                 reject(err);
             }
             resolve(rss);
         });
-        feedparser.on('readable', function() {
+        feedparser.on('readable', function () {
             var post;
             if (post = this.read()) {
-                rss = _.pick(post.meta,options);
+                rss = _.pick(post.meta, options);
                 rss.feedurl = url;   //rss 的url
                 resolve(rss);
             }
@@ -96,13 +100,13 @@ function siteInfo(url,options) {
  * @param posts
  * @returns {*|Promise}
  */
-function fetchAllContent(posts){
-    return Promise.reduce(posts, function(total, post) {
-            return getCleanBody(post.link).then(function(article){
-                post.content = article.content ? article.content: post.description || post.summary;
-                return post;
-            });
-    }, []).then(function(total) {
+function fetchAllContent(posts) {
+    return Promise.reduce(posts, function (total, post) {
+        return getCleanBody(post.link).then(function (article) {
+            post.content = article.content ? article.content : post.description || post.summary;
+            return post;
+        });
+    }, []).then(function (total) {
         return posts;
     });
 }
@@ -111,8 +115,8 @@ function fetchAllContent(posts){
  * @param url
  * @returns {*}
  */
-function getAllByUrl(url){
-    return fetchRSS(url).then(function(posts) {
+function getAllByUrl(url) {
+    return fetchRSS(url).then(function (posts) {
         return fetchAllContent(posts);
     });
 }
@@ -121,10 +125,10 @@ function getAllByUrl(url){
  * @param link
  * @returns {Promise}
  */
-function getCleanBody(link){
+function getCleanBody(link) {
     return new Promise(function (resolve, reject) {
-        read(link,function(err, article, meta) {
-            if(err){
+        read(link, function (err, article, meta) {
+            if (err) {
                 reject(err);
             }
             resolve(article);
@@ -132,9 +136,9 @@ function getCleanBody(link){
     });
 }
 module.exports = {
-    fetchRss        :   fetchRss,
-    siteInfo        :   siteInfo,
-    fetchAllContent :   fetchAllContent,
-    getCleanBody    :   getCleanBody,
-    getAllByUrl     :   getAllByUrl
+    fetchRss: fetchRss,
+    siteInfo: siteInfo,
+    fetchAllContent: fetchAllContent,
+    getCleanBody: getCleanBody,
+    getAllByUrl: getAllByUrl
 };

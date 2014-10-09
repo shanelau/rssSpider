@@ -1,22 +1,23 @@
 {
-  "name": "rssSpider",
-  "version": "1.0.0",
-  "private": true,
-  "author": "Liu Xing <shanelau1021@gmail.com> (http://kissliux.github.io)",
-  "description": "A stronger rss spide, fetch post'body content",
-  "repository": {
-    "url": ""
-  },
-  "main": "index.js",
-  "engines": {
-    "node": "*"
-  },
-  "dependencies": {
-    "bluebird": "^2.3.2",
-    "feedparser": "^0.19.2",
-    "lodash": "^2.4.1",
-    "node-readability": "^0.9.0",
-    "nodeunit": "^0.9.0",
-    "request": "^2.45.0"
-  }
+    "name": "rssspider",
+    "version": "1.0.1",
+    "author": "Liu Xing <shanelau1021@gmail.com> (http://kissliux.github.io)",
+    "description": "The simplest way to use rssspide to fetch rss list and site info. Fetch post'content ,give clean view to you.  ",
+    "email": "shanelau1021@gmail.com",
+    "homepage": "https://github.com/kissliux/rssSpider",
+    "repository": {
+        "url": ""
+    },
+    "main": "index.js",
+    "engines": {
+        "node": "*"
+    },
+    "dependencies": {
+        "bluebird": "^2.3.2",
+        "feedparser": "^0.19.2",
+        "lodash": "^2.4.1",
+        "node-readability": "^0.9.0",
+        "nodeunit": "^0.9.0",
+        "request": "^2.45.0"
+    }
 }
