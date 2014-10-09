@@ -27,7 +27,7 @@ spide.fetchRss(url).then(function(data){
 
 ## API Documentation
 
-1. ## <code>fetchRss(url,[options])</code>   
+** <code>fetchRss(url,[options])</code> **  
 	
 	get rss site'post list  ,like this  [www.bigertech.com/rss]http://www.bigertech.com/rss
 
@@ -57,8 +57,8 @@ spide.fetchRss(url).then(function(data){
   ....  // more
 	]
 	```
-
-2.  ## <code>siteInfo(url,[options])</code>  
+  
+** <code>siteInfo(url,[options])</code>  **
     get website info
     * **url**   webiste'rss url
     * **options**  what data you need ?  default value:
@@ -85,7 +85,7 @@ spide.fetchRss(url).then(function(data){
 
 
 
-3.  `getCleanBody(url)`
+** `getCleanBody(url)` **
 
 Where
 
@@ -112,18 +112,16 @@ The article content of the web page. Return `false` if failed.
 
 
 
-## <code>getAllByUrl(url,[options])</code>
-
-	This method is similar to ** fetchRss **  
+**<code>getAllByUrl(url,[options])</code>**
+This method is similar to ** fetchRss **  
 	What'more ,it fetch the clean page content.
 	Turn any web page into a clean view. This module is based on arc90's readability project.
 	
-	* **url** website'rss url  
+* **url** website'rss url  
 	
-	* **Array**  respose data
+* **Array**  respose data
 	
-	
-	get clean view code  
+get clean view code  
 	
 	
 ```  
