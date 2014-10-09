@@ -31,7 +31,7 @@ spide.fetchRss(url).then(function(data){
 
 ### 1. <code>fetchRss(url,[options])</code> 
 	
-get rss site'post list  ,like this  [www.bigertech.com/rss]http://www.bigertech.com/rss
+get rss site'post list  ,like this  [www.bigertech.com/rss](http://www.bigertech.com/rss)
 
 *  **url** : webiste'rss url 
 *  **options** :what data you need ?  default value:
