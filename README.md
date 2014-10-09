@@ -6,6 +6,7 @@ Design and coding with all the love in the world by ShaneLau.
 
 > The simplest way to use rssspide to fetch rss list and site info.  
 > Fetch post'content ,give clean view to you.  
+>rss 爬虫，快速抓取站点信息和文章列表，文章的正文抓取
 
 This project is base on [feedparser](https://github.com/kballard/feedparser) and [node-readability](https://github.com/luin/node-readability) 
 
@@ -20,6 +21,7 @@ Then:
 
 ``` 
 var spide = require('rss-spide');
+var url = 'http://www.bigertech.com/rss';
 spide.fetchRss(url).then(function(data){
 		console.log(data); // rss  post list
 });
@@ -113,17 +115,16 @@ The article content of the web page. Return `false` if failed.
 
 
 ### 4. <code>getAllByUrl(url,[options])</code>
-This method is similar to ** fetchRss **  
-	What'more ,it fetch the clean page content.
-	Turn any web page into a clean view. This module is based on arc90's readability project.
+This method is similar to  **fetchRss**  
+####What'more ,it fetch the clean page content. 
+Turn any web page into a clean view. This module is based on arc90's readability project.
 	
 * **url** website'rss url  
 	
 * **Array**  respose data
 	
-get clean view code  
-	
-	
+get clean view code  , Clean view **content**
+		
 ```  
 
 [{ title: '一个营销人员的自我修养',
