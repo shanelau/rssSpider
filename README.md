@@ -144,6 +144,14 @@ get clean view code
 	]
 
 ```
+
+## test  100%
+```
+nodeunit test/index.js
+
+```
+
+
 ### Any question [shanelau](http://weibo.com/kissliux)  
 or  
 [shanelau1021@gmail.com](shanelau1021@gmail.com)
