@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Rssspider : Rss spider by nodejs ,   rss 爬虫，正文抓取">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Rssspider</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/kissliux/rssSpider">View on GitHub</a>
+
+          <h1 id="project_title">Rssspider</h1>
+          <h2 id="project_tagline">Rss spider by nodejs ,   rss 爬虫，正文抓取</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/kissliux/rssSpider/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/kissliux/rssSpider/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="rssspider" class="anchor" href="#rssspider"><span class="octicon octicon-link"></span></a>rssSpider</h1>
+
+<p>Design and coding with all the love in the world by ShaneLau.</p>
+
+<blockquote>
+<p>The simplest way to use rssspide to fetch rss list and site info.<br>
+Fetch post'content ,give clean view to you.<br>
+rss 爬虫，快速抓取站点信息和文章列表，文章的正文抓取</p>
+</blockquote>
+
+<p>This project is base on <a href="https://github.com/kballard/feedparser">feedparser</a> and <a href="https://github.com/luin/node-readability">node-readability</a> </p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<pre><code>npm install rssspider
+</code></pre>
+
+<p>Then:</p>
+
+<pre><code>var spide = require('rss-spide');
+var url = 'http://www.bigertech.com/rss';
+spide.fetchRss(url).then(function(data){
+        console.log(data); // rss  post list
+});
+</code></pre>
+
+<h2>
+<a name="api-documentation" class="anchor" href="#api-documentation"><span class="octicon octicon-link"></span></a>API Documentation</h2>
+
+<h3>
+<a name="1-fetchrssurloptions" class="anchor" href="#1-fetchrssurloptions"><span class="octicon octicon-link"></span></a>1. <code>fetchRss(url,[options])</code>
+</h3>
+
+<p>get rss site'post list  ,like this  <a href="http://www.bigertech.com/rss">www.bigertech.com/rss</a></p>
+
+<ul>
+<li> <strong>url</strong> : webiste'rss url </li>
+<li> <strong>options</strong> :what data you need ?  default value:</li>
+</ul>
+
+<pre><code>    ['title','description','summary','date','link','guid','author','comments','origlink','image','source','categories','enclosures']
+</code></pre>
+
+<p>response data
+<strong>Array</strong>  </p>
+
+<pre><code>[{ title: '一个营销人员的自我修养',
+  description: '&lt;p&gt;&lt;/p&gt;',
+  summary: '&lt;/p&gt;',
+  date: Wed Oct 08 2014 17:14:26 GMT+0800 (CST),
+  link: 'http://www.bigertech.com/learn-social-media-marketing/',
+  guid: 'a623d78a-dae9-4915-9caa-0fd34fb3757c',
+  author: '巴依老爷',
+  comments: null,
+  origlink: null,
+  image: {},
+  source: {},
+  categories: [],
+  enclosures: [] },
+  ....  // more
+    ]
+
+</code></pre>
+
+<h3>
+<a name="2-siteinfourloptions" class="anchor" href="#2-siteinfourloptions"><span class="octicon octicon-link"></span></a>2. <code>siteInfo(url,[options])</code>
+</h3>
+
+<p>get website info  </p>
+
+<ul>
+<li>
+<strong>url</strong>   webiste'rss url</li>
+<li>
+<p><strong>options</strong>  what data you need ?  default value:</p>
+
+<pre><code>['title','description','date','link','xmlurl','author','favicon','copyright','generator','image']
+
+</code></pre>
+
+<p>response data <strong>Array</strong> </p>
+
+<pre><code>{ title: '笔戈科技',
+description: '简单、有趣、有价值',
+date: Thu Oct 09 2014 18:15:14 GMT+0800 (CST),
+link: 'http://www.bigertech.com/',
+xmlurl: 'http://www.bigertech.com/rss/',
+author: null,
+favicon: null,
+copyright: null,
+generator: 'Ghost 0.5',
+image: {},
+feedurl: 'http://www.bigertech.com/rss' } 
+</code></pre>
+</li>
+</ul>
+
+<h3>
+<a name="3-getcleanbodyurl" class="anchor" href="#3-getcleanbodyurl"><span class="octicon octicon-link"></span></a>3. <code>getCleanBody(url)</code>
+</h3>
+
+<p>Turn any web page into a clean view. This module is based on arc90's readability project.  </p>
+
+<ul>
+<li>
+<strong>html</strong> url or html code.</li>
+<li>
+<strong>options</strong> is an optional options object</li>
+<li>
+<p><strong>callback</strong> is the callback to run - <code>callback(error, article, meta)</code></p>
+
+<pre><code>var url = 'http://www.bigertech.com/learn-social-media-marketing/';
+spide.getCleanBody(url).then(function(article){
+      console.log(article.content);   //clean code view    
+  });
+</code></pre>
+</li>
+</ul>
+
+<h5>
+<a name="more-info-node-readability" class="anchor" href="#more-info-node-readability"><span class="octicon octicon-link"></span></a>More info <a href="https://github.com/luin/node-readability">node-readability</a>
+</h5>
+
+<h4>
+<a name="articlecontent--is-clean-view" class="anchor" href="#articlecontent--is-clean-view"><span class="octicon octicon-link"></span></a>article.content  is clean view</h4>
+
+<p>The article content of the web page. Return <code>false</code> if failed.</p>
+
+<h3>
+<a name="4-getallbyurlurloptions" class="anchor" href="#4-getallbyurlurloptions"><span class="octicon octicon-link"></span></a>4. <code>getAllByUrl(url,[options])</code>
+</h3>
+
+<p>This method is similar to  <strong>fetchRss</strong>  </p>
+
+<h4>
+<a name="whatmore-it-fetch-the-clean-page-content" class="anchor" href="#whatmore-it-fetch-the-clean-page-content"><span class="octicon octicon-link"></span></a>What'more ,it fetch the clean page content.</h4>
+
+<p>Turn any web page into a clean view. This module is based on arc90's readability project.</p>
+
+<ul>
+<li><p><strong>url</strong> website'rss url  </p></li>
+<li><p><strong>Array</strong>  respose data</p></li>
+</ul>
+
+<p>get clean view code  , Clean view <strong>content</strong></p>
+
+<pre><code>
+[{ title: '一个营销人员的自我修养',
+   content:'clean code view',     // clean code view
+  description: '&lt;p&gt;&lt;/p&gt;',
+  summary: '&lt;/p&gt;',
+  date: Wed Oct 08 2014 17:14:26 GMT+0800 (CST),
+  link: 'http://www.bigertech.com/learn-social-media-marketing/',
+  guid: 'a623d78a-dae9-4915-9caa-0fd34fb3757c',
+  author: '巴依老爷',
+  comments: null,
+  origlink: null,
+  image: {},
+  source: {},
+  categories: [],
+  enclosures: [] },
+    ....... // more
+    ]
+
+</code></pre>
+
+<h2>
+<a name="test--100" class="anchor" href="#test--100"><span class="octicon octicon-link"></span></a>test  100%</h2>
+
+<pre><code>nodeunit test/index.js
+
+</code></pre>
+
+<h3>
+<a name="any-question-shanelau" class="anchor" href="#any-question-shanelau"><span class="octicon octicon-link"></span></a>Any question <a href="http://weibo.com/kissliux">shanelau</a>
+</h3>
+
+<p>or<br>
+<a href="shanelau1021@gmail.com">shanelau1021@gmail.com</a></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Rssspider maintained by <a href="https://github.com/kissliux">kissliux</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
