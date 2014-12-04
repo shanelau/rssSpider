@@ -8,7 +8,7 @@ Design and coding with all the love in the world by ShaneLau.
 > Fetch post'content ,give clean view to you.  
 >rss 爬虫，快速抓取站点信息和文章列表，文章的正文抓取
 
-This project is base on [feedparser](https://github.com/kballard/feedparser) and [node-readability](https://github.com/luin/node-readability) 
+This project is base on [feedparser](https://github.com/kballard/feedparser) and [node-readability](https://github.com/luin/node-readability)
 
 
 
@@ -19,8 +19,8 @@ npm install rssspider
 ```
 Then:
 
-``` 
-var spide = require('rss-spide');
+```
+var spide = require('rssspider');
 var url = 'http://www.bigertech.com/rss';
 spide.fetchRss(url).then(function(data){
 		console.log(data); // rss  post list
@@ -29,13 +29,13 @@ spide.fetchRss(url).then(function(data){
 
 ## API Documentation
 
-### 1. <code>fetchRss(url,[options])</code> 
-	
+### 1. <code>fetchRss(url,[options])</code>
+
 get rss site'post list  ,like this  [www.bigertech.com/rss](http://www.bigertech.com/rss)
 
-*  **url** : webiste'rss url 
+*  **url** : webiste'rss url
 *  **options** :what data you need ?  default value:
-	
+
 ```
 	['title','description','summary','date','link','guid','author','comments','origlink','image','source','categories','enclosures']
 ```  
@@ -60,19 +60,19 @@ response data
 	]
 
 ```
-  
-### 2. <code>siteInfo(url,[options])</code> 
+
+### 2. <code>siteInfo(url,[options])</code>
 get website info  
 
 * **url**   webiste'rss url
 * **options**  what data you need ?  default value:
-    
+
     ```
 ['title','description','date','link','xmlurl','author','favicon','copyright','generator','image']
 
     ```
-response data **Array** 
-   
+response data **Array**
+
    ```
   { title: '笔戈科技',
   description: '简单、有趣、有价值',
@@ -84,7 +84,7 @@ response data **Array**
   copyright: null,
   generator: 'Ghost 0.5',
   image: {},
-  feedurl: 'http://www.bigertech.com/rss' } 
+  feedurl: 'http://www.bigertech.com/rss' }
    ```
 
 
@@ -96,19 +96,19 @@ Turn any web page into a clean view. This module is based on arc90's readability
   * **html** url or html code.
   * **options** is an optional options object
   * **callback** is the callback to run - `callback(error, article, meta)`
-  
-  
+
+
   ```
   var url = 'http://www.bigertech.com/learn-social-media-marketing/';
   spide.getCleanBody(url).then(function(article){
-        console.log(article.content);   //clean code view    
+        console.log(article.content);   //clean code view
     });
   ```
-  
+
 ##### More info [node-readability](https://github.com/luin/node-readability)
 
 
-#### article.content  is clean view 
+#### article.content  is clean view
 
 The article content of the web page. Return `false` if failed.
 
@@ -116,15 +116,15 @@ The article content of the web page. Return `false` if failed.
 
 ### 4. <code>getAllByUrl(url,[options])</code>
 This method is similar to  **fetchRss**  
-####What'more ,it fetch the clean page content. 
+####What'more ,it fetch the clean page content.
 Turn any web page into a clean view. This module is based on arc90's readability project.
-	
+
 * **url** website'rss url  
-	
+
 * **Array**  respose data
-	
+
 get clean view code  , Clean view **content**
-		
+
 ```  
 
 [{ title: '一个营销人员的自我修养',
@@ -156,5 +156,3 @@ nodeunit test/index.js
 ### Any question [shanelau](http://weibo.com/kissliux)  
 or  
 [shanelau1021@gmail.com](shanelau1021@gmail.com)
-
-
