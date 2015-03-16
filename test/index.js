@@ -14,9 +14,10 @@ exports.fetchRSS = function(test){
 exports.fetchSiteInfo = function(test){
     spide.siteInfo(url).then(function(data) {
         console.log(data);
-
         test.ok(data.title !== '', "this assertion should pass");
         test.done();
+    }).catch(function(err){
+      console.error(err);
     });
 
 };
@@ -29,9 +30,11 @@ exports.getAllByUrl = function(test){
 };
 
 exports.getPostContent = function(test){
-    var url = 'http://www.bigertech.com/the-art-of-mfc/';
+    var url = 'http://www.bigertech.com/post/the-art-of-mfc/';
     spide.getCleanBody(url).then(function(data){
         test.ok(data.title != '', "this assertion should pass");
         test.done();
+    }).catch(function(err){
+      console.error(err);
     });
 };
