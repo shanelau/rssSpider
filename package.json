@@ -1,16 +1,19 @@
 {
   "name": "rssspider",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "Liu Xing <shanelau1021@gmail.com> (http://kissliux.github.io)",
   "description": "The simplest way to use rssspide to fetch rss list and site info. Fetch post'content ,give clean view to you.  ",
   "email": "shanelau1021@gmail.com",
-  "homepage": "https://github.com/kissliux/rssSpider",
+  "homepage": "https://github.com/shanelau/rssSpider",
   "repository": {
-    "url": ""
+    "url": "https://github.com/shanelau/rssSpider"
   },
   "main": "index.js",
   "engines": {
-    "node": "0.12.x"
+    "node": ">=0.12.x"
+  },
+  "sciprts": {
+    "test": "nodeunit test/index.js"
   },
   "dependencies": {
     "bluebird": "^2.3.2",
@@ -18,7 +21,7 @@
     "feedparser": "^0.19.2",
     "iconv-lite": "^0.4.13",
     "lodash": "^2.4.1",
-    "node-readability": "^1.0.1",
+    "node-readability": "^1.0.2",
     "readability": "^0.1.0",
     "request": "^2.45.0"
   },

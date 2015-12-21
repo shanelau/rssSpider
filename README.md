@@ -152,6 +152,9 @@ nodeunit test/index.js
 
 ```
 
+## updrade
+Add  node 4.x support
+
 
 ### Any question [shanelau](http://weibo.com/kissliux)  
 or  
