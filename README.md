@@ -152,7 +152,7 @@ nodeunit test/index.js
 
 ```
 
-## updrade
+## upgrade
 Add  node 4.x support
 
 
