@@ -88,6 +88,7 @@ response data **Array**
    ```
 
 
+** 以下功能在 1.2.0 才能使用， readability 的库支持不是很好 **
 
 ### 3. `getCleanBody(url)`
 
