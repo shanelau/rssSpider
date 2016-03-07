@@ -1,6 +1,6 @@
 {
   "name": "rssspider",
-  "version": "1.3.1",
+  "version": "1.4.3",
   "author": "Liu Xing <shanelau1021@gmail.com> (http://kissliux.github.io)",
   "description": "The simplest way to use rssspide to fetch rss list and site info. Fetch post'content ,give clean view to you.  ",
   "email": "shanelau1021@gmail.com",

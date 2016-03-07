@@ -3,7 +3,7 @@
  */
 var spide = require('../index'),
   url =
-  'http://wan.meizu.com/rss';
+  'http://news.baidu.com/ns?word=%F7%C8%CD%E6%B0%EF&tn=newsrss&from=news&cl=2&rn=20&ct=1';
 exports.fetchRSS = function(test) {
   spide.fetchRss(url).then(function(data) {
     test.ok(data.length > 0, "this assertion should pass");
